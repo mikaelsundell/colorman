@@ -1,4 +1,4 @@
-Readme for developtool
+Colorman
 ==================
 
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](https://github.com/mikaelsundell/logctool/blob/master/README.md)
@@ -6,7 +6,7 @@ Readme for developtool
 Introduction
 ------------
 
-developtool is a set of utilities for processing film negatives.
+Colorman is an app for color processing and Inspection with grading, scopes, and scripting capabilities.
 
 Documentation
 -------------
