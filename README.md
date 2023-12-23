@@ -1,12 +1,11 @@
 # <img src="resources/AppIcon.png" valign="middle" alt="Icon" width="50" height="50"> Colorman #
-==================
 
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](https://github.com/mikaelsundell/logctool/blob/master/README.md)
 
 Introduction
 ------------
 
-<img src="https://github.com/mikaelsundell/colorman/blob/1230ca62c7c94554b4c59d70b181ba1c5f4302ee/resources/Colorman.png" />
+<img src="https://github.com/mikaelsundell/colorman/blob/dfdd6aa9b5d096a13214a81619a725a0454d4f24/resources/AppImage.png" />
 
 Colorman is an app for color processing and Inspection with grading, scopes, and scripting capabilities.
 
