@@ -9,6 +9,8 @@ Introduction
 
 Colorman is an app for color processing and Inspection with grading, scopes, and scripting capabilities.
 
+This project is still in development and not ready for use.
+
 **Important Gatekeeper note**
 
 Use `xattr -cr /Applications/Colorman.app` if downloaded from releases to clear attributes added by Gatekeeper.
