@@ -1,4 +1,4 @@
-Colorman
+# <img src="resources/AppIcon.png" valign="middle" alt="Icon" width="50" height="50"> Colorman #
 ==================
 
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](https://github.com/mikaelsundell/logctool/blob/master/README.md)
@@ -6,30 +6,57 @@ Colorman
 Introduction
 ------------
 
+<img src="https://github.com/mikaelsundell/colorman/blob/1230ca62c7c94554b4c59d70b181ba1c5f4302ee/resources/Colorman.png" />
+
 Colorman is an app for color processing and Inspection with grading, scopes, and scripting capabilities.
+
+**Important Gatekeeper note**
+
+Use `xattr -cr /Applications/Colorman.app` if downloaded from releases to clear attributes added by Gatekeeper.
 
 Documentation
 -------------
 
-Building
+Build & Package
+------------------
+Colorman is built using the ```build.sh``` script.
+
+Build all - debug and release:
+```shell
+./build.sh all
+```
+
+Requires 3rdparty build at the same level as Colorman.
+
+
+Colorman Advanced
 --------
 
-The developtool app can be built both from commandline or using optional Xcode `-GXcode`.
+The Colorman app can be built both from commandline or using Xcode `-GXcode`. Use `DYLD_IMAGE_SUFFIX=_debug` environment variable to link and run with Qt debug frameworks.
+
+## CMake configuration ##
+
+Add cmake to path:
+
+```shell
+export PATH=$PATH:/Applications/CMake.app/Contents/bin
+```
+
+## Build configuration ##
 
 ```shell
 mkdir build
 cd build
-cmake .. -DCMAKE_MODULE_PATH=<path>/logctool/modules -DCMAKE_PREFIX_PATH=<path>/3rdparty/build/macosx/arm64.debug -GXcode
-cmake --build . --config Release -j 8
+cmake .. -DCMAKE_MODULE_PATH=<path>/colorman/modules -DCMAKE_PREFIX_PATH=<path>/3rdparty/build/macosx/arm64.debug -GXcode
+cmake --build . --config Release --parallel
 ```
 
-Packaging
----------
+**Packaging**
 
 The `macdeploy.sh` script will deploy mac bundle to dmg including dependencies.
 
 ```shell
-./macdeploy.sh -e <path>/logctool -d <path>/dependencies -p <path>/path to deploy
+./macdeploy.sh -b <path>/Colorman.app -m <path>/macdeployqt -d <path>/Colorman_macOS<version>_<arch>.dmg
 ```
 
 Dependencies
@@ -37,7 +64,6 @@ Dependencies
 
 | Project     | Description |
 | ----------- | ----------- |
-| Imath       | [Imath project @ Github](https://github.com/AcademySoftwareFoundation/Imath)
 | OpenImageIO | [OpenImageIO project @ Github](https://github.com/OpenImageIO/oiio)
 | 3rdparty    | [3rdparty project containing all dependencies @ Github](https://github.com/mikaelsundell/3rdparty)
 
@@ -46,23 +72,14 @@ Project
 -------------
 
 * GitHub page   
-https://github.com/mikaelsundell/it8tool
+https://github.com/mikaelsundell/colorman
+
 * Issues   
-https://github.com/mikaelsundell/it8tool/issues
-
-
-Resources
----------
-
-* Aces-dev Matrices    
-https://github.com/ampas/aces-dev/blob/master/transforms/ctl/README-MATRIX.md
+https://github.com/mikaelsundell/colorman/issues
 
 
 Copyright
 ---------
-
-* IT8 references   
-Monaco Acquisition Company
 
 * Roboto font   
 https://fonts.google.com/specimen/Roboto   
