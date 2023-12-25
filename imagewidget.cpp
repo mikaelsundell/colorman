@@ -13,6 +13,7 @@
 #include <QVBoxLayout>
 #include <QPainter>
 #include <QPointer>
+#include <QDebug>
 
 class ImageWidgetPrivate : public QObject
 {
@@ -52,6 +53,11 @@ ImageWidgetPrivate::dropEvent(QDropEvent *event)
             widget->update();
             emit widget->imageDropped(image);
         }
+    }
+    if (mimeData->hasImage()) {
+        image = qvariant_cast<QImage>(event->mimeData()->imageData());
+        widget->update();
+        emit widget->imageDropped(image);
     }
 }
 

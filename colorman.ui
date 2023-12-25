@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ColorAnalyzer</string>
+   <string>Colorman</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -29,7 +29,7 @@
       <property name="styleSheet">
        <string notr="true"/>
       </property>
-      <layout class="QHBoxLayout" />
+      <layout class="QHBoxLayout"/>
      </widget>
     </item>
    </layout>
@@ -40,11 +40,47 @@
      <x>0</x>
      <y>0</y>
      <width>874</width>
-     <height>24</height>
+     <height>37</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="about"/>
+    <addaction name="openGithubReadme"/>
+    <addaction name="openGithubIssues"/>
+   </widget>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="about">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="openGithubReadme">
+   <property name="text">
+    <string>Open Github README</string>
+   </property>
+  </action>
+  <action name="openGithubIssues">
+   <property name="text">
+    <string>Open Github Issues</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

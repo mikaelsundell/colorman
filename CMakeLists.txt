@@ -24,10 +24,12 @@ find_package( Lcms2 REQUIRED )
 set (app_sources
     vectorscopewidget.cpp
     vectorscopewidget.h
-    colortools.cpp
+    colortools.cpp  
     colortools.h
     imagewidget.h
     imagewidget.cpp
+    mac.h
+    mac.mm
     main.cpp
     colorman.cpp
     colorman.h
