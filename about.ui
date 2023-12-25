@@ -141,7 +141,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Color Picker</string>
+       <string>Colorman</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
