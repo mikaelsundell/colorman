@@ -81,7 +81,7 @@ build_colorman() {
     fi
 
     # deploy
-    $script_dir/scripts/macdeploy.sh -b "$xcode_type/Colorman.app" -m "$prefix/bin/macdeployqt" -d "$dmg_file"
+    $script_dir/scripts/macdeploy.sh -b "sources/colorman/$xcode_type/Colorman.app" -m "$prefix/bin/macdeployqt" -d "$dmg_file"
 }
 
 # build types
