@@ -5,7 +5,7 @@
 Introduction
 ------------
 
-<img src="https://github.com/mikaelsundell/colorman/blob/dfdd6aa9b5d096a13214a81619a725a0454d4f24/resources/AppImage.png" />
+<img src="https://github.com/mikaelsundell/colorman/blob/db44f33595b75b9b6bd051a266dfdfa10902ec19/sources/colorman/resources/AppImage.png" />
 
 Colorman is an app for color processing and Inspection with grading, scopes, and scripting capabilities.
 
