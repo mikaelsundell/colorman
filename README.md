@@ -1,4 +1,4 @@
-# <img src="resources/AppIcon.png" valign="middle" alt="Icon" width="50" height="50"> Colorman #
+# <img src="sources/colorman/resources/AppIcon.png" valign="middle" alt="Icon" width="50" height="50"> Colorman #
 
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](https://github.com/mikaelsundell/logctool/blob/master/README.md)
 
