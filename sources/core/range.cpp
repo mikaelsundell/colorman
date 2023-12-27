@@ -51,7 +51,7 @@ RangePrivate::addFrame(int frame, const File& file)
 File
 RangePrivate::frame(int frame) const
 {
-    return( ranges.value(frame));
+    return(ranges.value(frame));
 }
 
 int
