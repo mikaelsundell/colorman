@@ -9,13 +9,21 @@ cmake_minimum_required( VERSION 3.0 )
 set( project_name "Colorman" )
 project( ${project_name} )
 
-# packages
+# cmake
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_PREFIX_PATH}/lib/cmake")
+
+# cmake - Qt6
 set (qt6_modules Core PrintSupport Gui Widgets OpenGL)
 find_package(Qt6 COMPONENTS ${qt6_modules} CONFIG REQUIRED)
 set (CMAKE_AUTOMOC ON)
 set (CMAKE_AUTORCC ON)
 set (CMAKE_AUTOUIC ON)
 set (CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# cmake - OpenImageIO
+find_package( OpenImageIO CONFIG REQUIRED )
+
+# cmake - lcms2
 find_package( Lcms2 REQUIRED )
 
 # configuration

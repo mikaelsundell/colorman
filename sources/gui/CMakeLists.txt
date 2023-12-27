@@ -27,7 +27,7 @@ target_include_directories (${project_name}
 )
 
 target_link_libraries (${project_name}
-    PRIVATE
+    PUBLIC
         Qt6::Core
         Qt6::Widgets
 )

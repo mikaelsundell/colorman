@@ -3,3 +3,7 @@
 // https://github.com/mikaelsundell/colorman
 
 #pragma once
+
+// Qt6 headers
+#include <QObject>
+#include <QSharedPointer>
