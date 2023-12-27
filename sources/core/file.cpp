@@ -165,53 +165,53 @@ FilePrivate::displaySize() const
 }
 
 void
-FilePrivate::addRange( const Range & range )
+FilePrivate::addRange(const Range& range)
 {
-    rangelist.append( range );
+    rangelist.append(range );
 }
 
 QList<Range>
 FilePrivate::ranges() const
 {
-    return( rangelist );
+    return(rangelist);
 }
 
 int
 FilePrivate::start() const
 {
-    if( type() == File::Frame )
+    if(type() == File::Frame)
     {
-        return( rangeName( info.fileName() ).frame ); // get start frame from fileName
+        return( rangeName(info.fileName() ).frame);
     }
     else
     {
-        return( rangelist.front().start() );
+        return(rangelist.front().start());
     }
 }
         
 int
 FilePrivate::end() const
 {
-    if( type() == File::Frame )
+    if(type() == File::Frame)
     {
-        return( rangeName( info.fileName() ).frame ); // get end frame from fileName
+        return(rangeName( info.fileName() ).frame); // get end frame from fileName
     }
     else
     {
-        return( rangelist.back().end() );
+        return(rangelist.back().end());
     }
 }
 
 File::Type
 FilePrivate::type() const
 {
-    if( rangelist.size() )
+    if(rangelist.size())
     {
-        return( File::Sequence );
+        return(File::Sequence);
     }
     else
     {
-        return( File::Frame );
+        return(File::Frame);
     }
 }
 
@@ -222,13 +222,13 @@ FilePrivate::isValid() const
 }
 
 bool
-FilePrivate::operator < (const File& file) const
+FilePrivate::operator<(const File& file) const
 {
     return(QString::compare(displayName() , file.displayName(), Qt::CaseInsensitive) < 0);
 }
 
 bool
-FilePrivate::operator > (const File& file) const
+FilePrivate::operator>(const File& file) const
 {
     return(QString::compare(displayName() , file.displayName(), Qt::CaseInsensitive) > 0);
 }
@@ -243,12 +243,12 @@ FilePrivate::rangeName(const QString& displayname) {
     QRegularExpressionMatchIterator iterator = regex.globalMatch(name);
     while (iterator.hasNext()) {
         QRegularExpressionMatch match = iterator.next();
-        cap = match.captured(1);  // capture the text from the 1st subexpression
+        cap = match.captured(1); 
         pos = match.capturedStart(1);
     }
     if (pos != -1) {
         int frame = cap.toInt();
-        QString fill = cap.fill(fillChar); // fill the captured number with fillChar
+        QString fill = cap.fill(fillChar);
         return RangeValue(name.replace(pos, cap.length(), fill), frame);
     } else {
         return RangeValue(name, 0); // default to zero frame
@@ -324,7 +324,7 @@ File::size() const
 QString
 File::suffix() const
 {
-	return(p->info.suffix());
+    return(p->info.suffix());
 }
 
 QString
@@ -390,9 +390,9 @@ File::hasFrame(int frame)
 File
 File::findFile( int frame )
 {
-    if( ranges().size() > 1 )
+    if(ranges().size() > 1)
     {
-        foreach( const core::Range & range, ranges())
+        foreach(const core::Range & range, ranges())
         {
             if(frame >= range.start() && frame <= range.end()) // make sure we include start and end frame for compare
             {
@@ -402,7 +402,7 @@ File::findFile( int frame )
     }
     else
     {
-        return ranges().first().frame(frame);
+        return(ranges().first().frame(frame));
     }
     return(File());
 }
