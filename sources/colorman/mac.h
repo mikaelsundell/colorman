@@ -4,7 +4,8 @@
 
 #pragma once
 
-namespace mac
-{
+namespace colorman {
+namespace mac {
     void setupMac();
+}
 }

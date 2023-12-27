@@ -3,12 +3,17 @@
 // https://github.com/mikaelsundell/colorman
 
 #include "colorman.h"
+#include <gui/application.h>
 #include <QApplication>
+
+using namespace colorman;
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    Colorman colorman;
-    colorman.show();
-    return app.exec();
+    gui::Application app(argc, argv);
+    {
+        Colorman colorman;
+        colorman.show();
+        return app.exec();
+    }
 }

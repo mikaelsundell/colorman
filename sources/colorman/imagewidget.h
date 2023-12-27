@@ -6,6 +6,8 @@
 
 #include <QWidget>
 
+namespace colorman {
+
 class ImageWidgetPrivate;
 class ImageWidget : public QWidget
 {
@@ -25,3 +27,5 @@ class ImageWidget : public QWidget
     private:
         QScopedPointer<ImageWidgetPrivate> p;
 };
+
+}

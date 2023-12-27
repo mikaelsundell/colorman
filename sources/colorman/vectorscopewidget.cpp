@@ -9,6 +9,8 @@
 #include <QPaintEvent>
 #include <QPainterPath>
 
+namespace colorman {
+
 class VectorscopeWidgetPrivate : public QObject
 {
     Q_OBJECT
@@ -275,4 +277,6 @@ VectorscopeWidget::paintEvent(QPaintEvent *event)
         }
     }
     painter.end();
+}
+
 }

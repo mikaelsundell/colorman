@@ -16,6 +16,8 @@
 #include "ui_about.h"
 #include "ui_colorman.h"
 
+namespace colorman {
+
 class ColormanPrivate : public QObject
 {
     Q_OBJECT
@@ -115,4 +117,6 @@ Colorman::Colorman()
 
 Colorman::~Colorman()
 {
+}
+
 }

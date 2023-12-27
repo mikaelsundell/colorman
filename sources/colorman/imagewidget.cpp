@@ -15,6 +15,8 @@
 #include <QPointer>
 #include <QDebug>
 
+namespace colorman {
+
 class ImageWidgetPrivate : public QObject
 {
     Q_OBJECT
@@ -111,4 +113,6 @@ void
 ImageWidget::paintEvent(QPaintEvent* event)
 {
     p->paintEvent(event);
+}
+
 }

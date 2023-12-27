@@ -6,6 +6,8 @@
 
 #include <QWidget>
 
+namespace colorman {
+
 class VectorscopeWidgetPrivate;
 class VectorscopeWidget : public QWidget
 {
@@ -23,3 +25,5 @@ class VectorscopeWidget : public QWidget
     private:
         QScopedPointer<VectorscopeWidgetPrivate> p;
 };
+
+}

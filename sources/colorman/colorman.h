@@ -6,6 +6,8 @@
 
 #include <QMainWindow>
 
+namespace colorman {
+
 class ColormanPrivate;
 class Colorman : public QMainWindow
 {
@@ -16,3 +18,5 @@ class Colorman : public QMainWindow
     private:
         QScopedPointer<ColormanPrivate> p;
 };
+
+}

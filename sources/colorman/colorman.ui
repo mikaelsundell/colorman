@@ -22,10 +22,10 @@
      <enum>QLayout::SetDefaultConstraint</enum>
     </property>
     <item>
-     <widget class="VectorscopeWidget" name="vectorscope" native="true"/>
+     <widget class="colorman::VectorscopeWidget" name="vectorscope" native="true"/>
     </item>
     <item>
-     <widget class="ImageWidget" name="imagewidget" native="true">
+     <widget class="colorman::ImageWidget" name="imagewidget" native="true">
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -84,15 +84,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>VectorscopeWidget</class>
+   <class>colorman::VectorscopeWidget</class>
    <extends>QWidget</extends>
-   <header>../../../vectorscopewidget.h</header>
+   <header>../../sources/colorman/vectorscopewidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>ImageWidget</class>
+   <class>colorman::ImageWidget</class>
    <extends>QWidget</extends>
-   <header>../../../imagewidget.h</header>
+   <header>../../sources/colorman/imagewidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

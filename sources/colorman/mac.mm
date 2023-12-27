@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
+namespace colorman {
 namespace mac
 {
     void setupMac()
@@ -14,4 +15,5 @@ namespace mac
         // we force dark aque no matter appearance set in system settings
         [NSApp setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameDarkAqua]];
     }
+}
 }
