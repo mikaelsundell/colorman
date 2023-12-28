@@ -95,7 +95,7 @@ Range::Range()
 {
 }
 
-Range::Range( const Range & range )
+Range::Range(const Range& range)
 : p(range.p)
 {
 }
@@ -160,13 +160,13 @@ Range::operator!=(const Range& range) const
 }
 
 bool
-Range::operator<(const Range & range ) const
+Range::operator<(const Range& range) const
 {
     return(p->operator<(range));
 }
 
 bool
-Range::operator>(const Range & range ) const
+Range::operator>(const Range& range) const
 {
     return(p->operator>(range));
 }

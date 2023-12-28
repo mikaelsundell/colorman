@@ -73,7 +73,7 @@ FilePrivate::FilePrivate(const QString& file)
 {
     if(file.contains(fillChar))
     {
-        QFileInfo fileInfo( file );
+        QFileInfo fileInfo(file);
         QString path = fileInfo.absolutePath();
         QString nameFilter = fileInfo.fileName().replace(QRegularExpression(QString("[%1]+").arg(fillChar)), "*");
         QList<File> files = File::parse(
@@ -88,7 +88,7 @@ FilePrivate::FilePrivate(const QString& file)
     }
     if(!info.isFile())
     {
-        info = QFileInfo( file );
+        info = QFileInfo(file);
     }
 }
 
@@ -115,18 +115,17 @@ FilePrivate::displayName() const
             QString("%1 %2-%3").arg(rangeName(info.fileName()).rangename) // file stores the first frame
                                .arg(ranges().front().start())
                                .arg(ranges().back().end());
-        if( ranges().size() > 1 ) 
-        {
+        if(ranges().size() > 1) {
             displayname += " ( ";
             foreach(const core::Range& range, ranges()) {
-                if( range.start() < range.end() )
+                if(range.start() < range.end())
                 {
-                    displayname += QString("%1-%2 ").arg( range.start() )
-                                                      .arg( range.end() );
+                    displayname += QString("%1-%2 ").arg(range.start())
+                                                    .arg(range.end());
                 }
                 else
                 {
-                    displayname += QString("%1 ").arg( range.start() );
+                    displayname += QString("%1 ").arg(range.start());
                 }
             }
             displayname += ")";
@@ -149,11 +148,11 @@ FilePrivate::displaySize() const
     {
         return(File::tr("%1TB").arg(QLocale().toString(qreal(bytes) / tb, 'f', 3)));
     }
-    if (bytes >= gb )
+    if (bytes >= gb)
     {
         return(File::tr("%1GB").arg(QLocale().toString(qreal(bytes) / gb, 'f', 2)));
     }
-    if (bytes >= mb )
+    if (bytes >= mb)
     {
         return(File::tr("%1MB").arg(QLocale().toString(qreal(bytes) / mb, 'f', 1)));
     }
@@ -167,7 +166,7 @@ FilePrivate::displaySize() const
 void
 FilePrivate::addRange(const Range& range)
 {
-    rangelist.append(range );
+    rangelist.append(range);
 }
 
 QList<Range>
@@ -181,7 +180,7 @@ FilePrivate::start() const
 {
     if(type() == File::Frame)
     {
-        return( rangeName(info.fileName() ).frame);
+        return(rangeName(info.fileName()).frame);
     }
     else
     {
@@ -194,7 +193,7 @@ FilePrivate::end() const
 {
     if(type() == File::Frame)
     {
-        return(rangeName( info.fileName() ).frame); // get end frame from fileName
+        return(rangeName(info.fileName()).frame); // get end frame from fileName
     }
     else
     {
@@ -256,11 +255,11 @@ FilePrivate::rangeName(const QString& displayname) {
 }
          
 File::File()
-: p(new FilePrivate() )
+: p(new FilePrivate())
 {
 }
 
-File::File( const File & file )
+File::File(const File& file)
 : p(file.p)
 {
 }
@@ -271,7 +270,7 @@ File::File(const QString& file)
 }
 
 File::File(const QFileInfo& info)
-: p( new FilePrivate(info))
+: p(new FilePrivate(info))
 {
 }
 
@@ -388,7 +387,7 @@ File::hasFrame(int frame)
 }
     
 File
-File::findFile( int frame )
+File::findFile(int frame)
 {
     if(ranges().size() > 1)
     {
@@ -465,7 +464,7 @@ File::operator > (const File & file) const
 }
 
 QList<File>
-File::parse(const QString& path, const QStringList& namefilters, bool useranges )
+File::parse(const QString& path, const QStringList& namefilters, bool useranges)
 {
     QDir dir(path);
     QList<File> files;
@@ -484,24 +483,24 @@ File::parse(const QString& path, const QStringList& namefilters, bool useranges 
                     // more than one file or already contains ranges
                     if(files.size() && (range->size() > 1 || files.back().ranges().size())) {
                         // new range, add range to file
-                        files.back().addRange( *range.data() );
+                        files.back().addRange(*range.data());
                     }
-                    files.append( core::File( entry ) );
+                    files.append(core::File(entry));
                     frame = value.frame;
                     rangename = value.rangename;
-                    range.reset( new Range() );
+                    range.reset(new Range());
                     
                 } else {
-                    if( value.frame != frame ) {
+                    if(value.frame != frame) {
                         // new range, add range to file
-                        files.back().addRange( *range.data() ); 
+                        files.back().addRange(*range.data()); 
                         frame = value.frame;
-                        range.reset( new Range() ); 
+                        range.reset(new Range()); 
                     }
                 }
-                range->addFrame( value.frame, entry );
-                if(last && ( range->size() > 1 || files.back().ranges().size())) {
-                    files.back().addRange( *range.data() );
+                range->addFrame(value.frame, entry);
+                if(last && (range->size() > 1 || files.back().ranges().size())) {
+                    files.back().addRange(*range.data());
                 }
                 frame++; 
             }
