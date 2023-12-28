@@ -75,13 +75,13 @@ build_colorman() {
     cmake --build . --config $xcode_type --parallel
 
     # clean dmg
-    dmg_file="$script_dir/Colorman_macOS${major_version}_${machine_arch}_${build_type}.dmg"
+    dmg_file="$script_dir/colorman_macOS${major_version}_${machine_arch}_${build_type}.dmg"
     if [ -f "$dmg_file" ]; then
         rm -f "$dmg_file"
     fi
 
     # deploy
-    $script_dir/scripts/macdeploy.sh -b "sources/colorman/$xcode_type/Colorman.app" -m "$prefix/bin/macdeployqt" -d "$dmg_file"
+    $script_dir/scripts/macdeploy.sh -b "sources/colorman/$xcode_type/colorman.app" -m "$prefix/bin/macdeployqt" -d "$dmg_file"
 }
 
 # build types

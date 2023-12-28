@@ -11,7 +11,7 @@ set( project_name "Colorman" )
 project( ${project_name} )
 
 # cmake
-set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_PREFIX_PATH}/lib/cmake")
+set (CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_PREFIX_PATH}/lib/cmake")
 
 # cmake config - Qt6
 set (qt6_modules Core PrintSupport Gui Widgets OpenGL)
@@ -22,14 +22,14 @@ set (CMAKE_AUTOUIC ON)
 set (CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # cmake config - OpenImageIO
-find_package( OpenImageIO CONFIG REQUIRED )
+find_package (OpenImageIO CONFIG REQUIRED )
 
 # package pybind11
-find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
-find_package(pybind11 REQUIRED)
+find_package (Python3 COMPONENTS Interpreter Development REQUIRED)
+find_package (pybind11 REQUIRED)
 
 # package lcms2
-find_package( Lcms2 REQUIRED )
+find_package (Lcms2 REQUIRED)
 
 # configuration
 set (BUILD_SHARED_LIBS ON)
