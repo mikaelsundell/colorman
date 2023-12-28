@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # https://github.com/mikaelsundell/colorman
 
-set( project_name "colorman" )
+set( project_name "Colorman" )
 project( ${project_name} )
 
 # sources

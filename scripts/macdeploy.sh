@@ -81,7 +81,6 @@ function deploy_dmg() {
 
     dmg_name=`basename ${dmg}`
     dmg_icon="${bundle}/Contents/Resources/AppIcon.icns"
-    dmg_dsstore="${bundle}/Contents/Resources/DS_Store"
     dmg_temp=`mktemp -q /tmp/${dmg_name}.XXXXXX`
     if ! [ -f "$dmg_temp" ]; then
         echo "Could not create temp directory for dmg, will exit"
@@ -103,7 +102,7 @@ function deploy_dmg() {
 
     # dsstore
     # must be created with the same id, use temporary dmg to modify and copy afterwards
-    resources_dir=$(dirname ${script})/../resources
+    resources_dir=$(dirname ${script})/../sources/colorman/resources
     cp "${resources_dir}/DS_Store" "$dmg_volume/.DS_Store"
 
     # applications
