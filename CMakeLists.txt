@@ -4,6 +4,7 @@
 
 # cmake
 cmake_minimum_required( VERSION 3.0 )
+cmake_policy (SET CMP0057 NEW)
 
 # project
 set( project_name "Colorman" )
@@ -12,7 +13,7 @@ project( ${project_name} )
 # cmake
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_PREFIX_PATH}/lib/cmake")
 
-# cmake - Qt6
+# cmake config - Qt6
 set (qt6_modules Core PrintSupport Gui Widgets OpenGL)
 find_package(Qt6 COMPONENTS ${qt6_modules} CONFIG REQUIRED)
 set (CMAKE_AUTOMOC ON)
@@ -20,10 +21,14 @@ set (CMAKE_AUTORCC ON)
 set (CMAKE_AUTOUIC ON)
 set (CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# cmake - OpenImageIO
+# cmake config - OpenImageIO
 find_package( OpenImageIO CONFIG REQUIRED )
 
-# cmake - lcms2
+# package pybind11
+find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+find_package(pybind11 REQUIRED)
+
+# package lcms2
 find_package( Lcms2 REQUIRED )
 
 # configuration
