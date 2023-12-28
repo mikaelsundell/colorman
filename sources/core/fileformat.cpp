@@ -70,13 +70,13 @@ FileFormatPrivate::isValid() const
 bool
 FileFormatPrivate::operator<(const FileFormat& fileformat) const
 {
-    return(QString::compare(name, fileformat.name(), Qt::CaseInsensitive ) < 0);
+    return(QString::compare(name, fileformat.name(), Qt::CaseInsensitive) < 0);
 }
 
 bool
 FileFormatPrivate::operator>(const FileFormat& fileFormat) const
 {
-    return(QString::compare(name , fileFormat.name(), Qt::CaseInsensitive ) > 0);
+    return(QString::compare(name , fileFormat.name(), Qt::CaseInsensitive) > 0);
 }
 
 FileFormat::FileFormat(const QString& name, const QList<QString>& extensions, bool readable, bool writable)
