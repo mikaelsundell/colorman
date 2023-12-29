@@ -82,7 +82,7 @@ ImageWidgetPrivate::paintEvent(QPaintEvent* event)
 
 #include "imagewidget.moc"
 
-ImageWidget::ImageWidget(QWidget *parent)
+ImageWidget::ImageWidget(QWidget* parent)
 : QWidget(parent)
 , p(new ImageWidgetPrivate())
 {

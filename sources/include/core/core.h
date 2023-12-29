@@ -4,6 +4,9 @@
 
 #pragma once
 
+// core
+#include <core/macro.h>
+
 // Qt6 headers
 #include <QObject>
 #include <QSharedPointer>

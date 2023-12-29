@@ -8,15 +8,15 @@
 
 namespace colorman {
 
-class ColormanPrivate;
-class Colorman : public QMainWindow
+class WindowPrivate;
+class Window : public QMainWindow
 {
     Q_OBJECT
     public:
-        Colorman();
-        virtual ~Colorman();
+        Window();
+        virtual ~Window();
     private:
-        QScopedPointer<ColormanPrivate> p;
+        QScopedPointer<WindowPrivate> p;
 };
 
 }

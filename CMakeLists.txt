@@ -13,7 +13,7 @@ project( ${project_name} )
 # cmake
 set (CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_PREFIX_PATH}/lib/cmake")
 
-# cmake config - Qt6
+# Qt6 - cmake config
 set (qt6_modules Core PrintSupport Gui Widgets OpenGL)
 find_package(Qt6 COMPONENTS ${qt6_modules} CONFIG REQUIRED)
 set (CMAKE_AUTOMOC ON)
@@ -21,14 +21,16 @@ set (CMAKE_AUTORCC ON)
 set (CMAKE_AUTOUIC ON)
 set (CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# cmake config - OpenImageIO
+# OpenImageIO - cmake config
 find_package (OpenImageIO CONFIG REQUIRED )
 
-# package pybind11
+# python3
 find_package (Python3 COMPONENTS Interpreter Development REQUIRED)
+
+# pybind11
 find_package (pybind11 REQUIRED)
 
-# package lcms2
+# lcms2
 find_package (Lcms2 REQUIRED)
 
 # configuration
