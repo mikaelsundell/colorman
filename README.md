@@ -49,7 +49,7 @@ export DEVELOPMENT_TEAM_ID=<team id>
 Colorman Advanced
 --------
 
-The Colorman app can be built both from commandline or using Xcode `-GXcode`. Use `DYLD_IMAGE_SUFFIX=_debug` environment variable to link and run with Qt debug frameworks.
+The Colorman app can be built both from commandline or using Xcode `-GXcode`.
 
 ## CMake configuration ##
 
