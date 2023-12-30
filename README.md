@@ -18,8 +18,8 @@ Use `xattr -cr /Applications/Colorman.app` if downloaded from releases to clear 
 Documentation
 -------------
 
-Build & Package
-------------------
+Build
+-------------
 Colorman is built using the ```build.sh``` script.
 
 Build all - debug and release:
@@ -29,7 +29,23 @@ Build all - debug and release:
 
 Requires 3rdparty build at the same level as Colorman.
 
+Signing
+-------------
 
+Build and sign for release:
+
+```shell
+./build.sh release --sign
+```
+
+Request a new certificate from Apple Developer using the Certificate Assistant ```Cerificate Assistant > Request a Certificate From a Certificate Authority ```. Download and install the Apple Distribution Certificate ```distribution.cer``` in a new Keychain ```File > Add Keychain ...```.
+
+Simplify the process by setting code sign identity and team id from environment variables. 
+
+```shell
+export CODE_SIGN_IDENTITY=<code sign identity>
+export DEVELOPMENT_TEAM_ID=<team id>
+```
 Colorman Advanced
 --------
 
