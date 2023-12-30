@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // https://github.com/mikaelsundell/colorman
 
-#include <gui/application.h>
+#include <widgets/application.h>
 
 namespace colorman {
-namespace gui {
+namespace widgets {
 
 class ApplicationPrivate
 {

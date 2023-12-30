@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>${MACOSX_FRAMEWORK_ICON_FILE}</string>
 	<key>CFBundleIdentifier</key>
-	<string>${MACOSX_FRAMEWORK_IDENTIFIER}</string>
+	<string>${MACOSX_BUNDLE_GUI_IDENTIFIER}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

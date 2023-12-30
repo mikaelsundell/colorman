@@ -7,7 +7,7 @@ add_executable ("oiio_viewer" oiio_viewer.cpp)
 target_link_libraries ("oiio_viewer"
     PRIVATE
         colorman::core
-        colorman::gui
+        colorman::widgets
         Qt6::Core Qt6::PrintSupport Qt6::Gui Qt6::Widgets
         OpenImageIO::OpenImageIO
 )

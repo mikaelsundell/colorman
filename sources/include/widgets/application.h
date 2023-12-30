@@ -4,11 +4,11 @@
 
 #pragma once
 
-#include <gui/gui.h>
+#include <widgets/widgets.h>
 #include <QApplication>
 
 namespace colorman {
-namespace gui {
+namespace widgets {
 
 class ApplicationPrivate;
 class Application : public QApplication

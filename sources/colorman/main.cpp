@@ -5,7 +5,7 @@
 #include "window.h"
 #include "colorman.h"
 #include "pythoninterpreter.h"
-#include <gui/application.h>
+#include <widgets/application.h>
 #include <QApplication>
 
 using namespace colorman;
@@ -15,7 +15,7 @@ main(int argc, char *argv[])
 {
     int exit = 0;
     try {
-        gui::Application app(argc, argv);
+        widgets::Application app(argc, argv);
         {
             Colorman* colorman = Colorman::instance();
             colorman->init();
@@ -28,11 +28,13 @@ main(int argc, char *argv[])
             exit = app.exec();
         }
     }
-    catch (const std::exception& e) {
+    catch (const std::exception& e)
+    {
         qDebug() << "standard exception:" << e.what();
         exit = -1;
     }
-    catch (...) {
+    catch (...)
+    {
         qDebug() << "unknown exception occurred";
         exit = -1;
     }

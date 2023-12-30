@@ -16,7 +16,7 @@
 
 // generated files
 #include "ui_about.h"
-#include "ui_colorman.h"
+#include "ui_window.h"
 
 namespace colorman {
 

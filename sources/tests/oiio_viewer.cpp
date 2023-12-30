@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // https://github.com/mikaelsundell/colorman
 
-#include <gui/application.h>
+#include <widgets/application.h>
 
 using namespace colorman;
 
 int
 main(int argc, char *argv[])
 {
-    gui::Application app( argc, argv );
+    widgets::Application app( argc, argv );
     return( app.exec() );
 }

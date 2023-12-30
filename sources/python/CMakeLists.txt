@@ -17,5 +17,5 @@ pybind11_add_module (${project_name} MODULE ${sources})
 target_link_libraries (${project_name}
     PRIVATE
         colorman::core
-        colorman::gui
+        colorman::widgets
 )

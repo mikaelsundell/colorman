@@ -5,7 +5,7 @@
 #include "pythoninterpreter.h"
 #include <core/macro.h>
 
-#undef slots // work around for Qt-Python headers
+#undef slots // ignore slots in Qt headers
 #include <Python.h>
 #define slots Q_SLOTS
 

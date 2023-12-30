@@ -10,20 +10,16 @@ file(GLOB headers
     "include/*.h"
 )
 
-# ui
-file(GLOB ui_headers
-    "*.ui"
-)
-
 # sources
 file(GLOB sources
     "*.cpp"
     "*.mm"
     "*.qrc"
+    "*.ui"
 )
 
-file(GLOB gui_sources
-    "gui/*.cpp"
+file(GLOB core_sources
+    "core/*.cpp"
 )
 
 file(GLOB python_sources
@@ -34,8 +30,12 @@ file( GLOB resources_sources
     "resources/*.icns" 
     "resources/*.icc"
     "resources/*.css"
-    "resources/App*.png"
-    "resources/smptecolorbar.png"
+    "resources/*.png"
+)
+
+file(GLOB widgets_sources
+    "widgets/*.cpp"
+    "widgets/*.ui"
 )
 
 set( bundle_sources
@@ -45,15 +45,15 @@ set( bundle_sources
 # source groups
 source_group("Source Files" FILES ${sources})
 source_group("Header Files" FILES ${headers})
-source_group("Gui Files" FILES ${gui_sources})
+source_group("Core Files" FILES ${core_sources})
 source_group("Python Files" FILES ${python_sources})
 source_group("Resources Files" FILES ${resources_sources})
+source_group("Widgets Files" FILES ${widgets_sources})
 source_group("Bundle Files" FILES ${bundle_sources})
-source_group("Ui Files" FILES ${ui_headers})
-source_group("Generated ui Headers" FILES ${generated_headers})
 
 # bundle
 if (APPLE)
+    set (MACOSX_BUNDLE_GUI_IDENTIFIER "com.github.mikaelsundell.colorman")
     set (MACOSX_BUNDLE_EXECUTABLE_NAME ${project_name})
     set (MACOSX_BUNDLE_INFO_STRING ${project_name})
     set (MACOSX_BUNDLE_BUNDLE_NAME ${project_name})
@@ -68,14 +68,33 @@ if (APPLE)
     add_executable (${project_name} 
         MACOSX_BUNDLE 
         ${headers} 
-        ${ui_headers}
-        ${generated_headers}
         ${sources} 
-        ${gui_sources} 
+        ${core_sources}
+        ${widgets_sources} 
         ${python_sources} 
+        ${python_sources}
         ${resources_sources}
+        ${widgets_sources}
+        # macosx bundle
+        ${bundle_sources}
     )
-    set_target_properties(${project_name} PROPERTIES
+    # code signing
+    if (SIGN_CODE)
+        if (CODE_SIGN_IDENTITY STREQUAL "" OR DEVELOPMENT_TEAM_ID STREQUAL "")
+            message (FATAL_ERROR "Code signing is enabled, but CODE_SIGN_IDENTITY or DEVELOPMENT_TEAM_ID is not set.")
+        else ()
+            message ("Code signing enabled for Xcode")
+            message ("  Sign identify: ${CODE_SIGN_IDENTITY}")
+            message ("  Development team: ${DEVELOPMENT_TEAM_ID}")
+        endif()
+        set_target_properties(${project_name} PROPERTIES
+            XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "${CODE_SIGN_IDENTITY}"
+            XCODE_ATTRIBUTE_DEVELOPMENT_TEAM "${DEVELOPMENT_TEAM_ID}"
+            XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${MACOSX_BUNDLE_GUI_IDENTIFIER}"
+            MACOSX_BUNDLE_GUI_IDENTIFIER "${MACOSX_BUNDLE_GUI_IDENTIFIER}"
+        )
+    endif()
+    set_target_properties (${project_name} PROPERTIES
         OUTPUT_NAME ${project_name}
         MACOSX_FRAMEWORK_INFO_PLIST ${bundle_sources})
     target_compile_options (${project_name} PRIVATE -Wno-deprecated-register)
@@ -87,7 +106,7 @@ if (APPLE)
     target_link_libraries (${project_name}
         PRIVATE
             colorman::core
-            colorman::gui
+            colorman::widgets
             Qt6::Core Qt6::PrintSupport Qt6::Gui Qt6::Widgets 
             Python3::Python
             ${LCMS2_LIBRARY}
