@@ -68,14 +68,6 @@ cmake .. -DCMAKE_MODULE_PATH=<path>/colorman/modules -DCMAKE_PREFIX_PATH=<path>/
 cmake --build . --config Release --parallel
 ```
 
-**Packaging**
-
-The `macdeploy.sh` script will deploy mac bundle to dmg including dependencies.
-
-```shell
-./macdeploy.sh -b <path>/Colorman.app -m <path>/macdeployqt -d <path>/Colorman_macOS<version>_<arch>.dmg
-```
-
 Dependencies
 -------------
 
