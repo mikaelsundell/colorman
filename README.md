@@ -2,6 +2,11 @@
 
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg?style=flat-square)](https://github.com/mikaelsundell/logctool/blob/master/README.md)
 
+| Download        | Description |
+| ----------------| ----------- |
+| Colorman v0.0.1 | [Apple Silicon macOS14 @ Github](https://github.com/mikaelsundell/colorman/releases/download/release-v0.0.1/Colorman_macOS14_arm64_release.dmg)
+
+
 Introduction
 ------------
 
